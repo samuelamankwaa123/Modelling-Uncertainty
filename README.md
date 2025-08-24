@@ -1,0 +1,3 @@
+This script takes a small sample split into three categories (L/M/S; e.g., 7/10/3 out of 20), converts those counts to proportions, and scales them to a target population (total_people = 100) to get expected counts for each category. It then quantifies uncertainty by computing the binomial standard deviation 
+np(1−p) with 𝑛=100.
+n=100, and reports ~68% ranges (±1 SD) around the expected counts. You can change total_people or the sample counts to project to any population size; NumPy is the only dependency. This treats each category’s marginal count as binomial (a reasonable approximation even though the joint distribution is multinomial). The output is a quick, interpretable estimate of L/M/S counts plus uncertainty bands.
